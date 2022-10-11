@@ -1,0 +1,17 @@
+--DATABASE
+
+-- Tables creation
+rails generate migration CreateUsers name:string
+rails generate migration CreateRecipes name:string preparation_time:string cooking_time:string description:text public:boolean
+rails generate migration CreateFoods name:string measurement_unit:string price:float quantity:integer
+rails generate migration CreateRecipefoods quantity:integer
+
+--Foreign Keys
+rails generate migration AddUserRefToRecipes user:references
+rails generate migration AddUserRefToFoods user:references
+rails generate migration AddRecipeRefToRecipefoods recipe:references
+rails generate migration AddFoodRefToRecipefoods food:references
+
+--Data
+user1 = User.create(name: 'Jesse', email: 'jesse@hotmail.com', password: '123456')
+user2 = User.create(name: 'Hans', email: 'hans@hotmail.com', password: '123456')
