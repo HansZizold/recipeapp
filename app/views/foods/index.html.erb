@@ -1,6 +1,6 @@
 <body>
   <%= render "navmenu" %>
-  <% @foodLists .each do |food| %>
+  <% @foodlists .each do |food| %>
     <% if can? :read_recipe, food %>
       <div class="recipe_main">
         <div class="recipe">
