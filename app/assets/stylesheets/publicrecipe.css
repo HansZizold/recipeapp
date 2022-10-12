@@ -1,0 +1,34 @@
+.public_recipes_title {
+  text-align: center;
+  font-size: 48px;
+  margin-top: 0;
+}
+
+.public_recipe_main {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin: 12px 160px;
+  border: 2px solid black;
+}
+
+.public_recipe {
+  margin: 8px 0;
+  min-width: 160px;
+}
+
+.public_recipe_name {
+  text-decoration: none;
+  font-weight: bold;
+  color: darkblue;
+}
+
+.public_recipe_details {
+  display: flex;
+  flex-direction: column;
+  margin: 8px 0;
+}
+
+.public_recipe_food {
+  margin-bottom: 0;
+}
