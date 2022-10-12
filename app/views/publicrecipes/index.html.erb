@@ -1,0 +1,18 @@
+<body>
+  <%= render "recipes/navmenu" %>
+  <h2 class="public_recipes_title">Public Recipes</h2>
+  <% @recipes.each do |recipe| %>
+    <div class="public_recipe_main">
+      <div class="public_recipe">
+        <%= link_to recipe_path(recipe.id), class: "public_recipe_name" do %>
+          <p><%= recipe.name %></p>
+        <% end %>
+        <p>By: <%= recipe.user.name %></p>
+      </div>
+      <div class="public_recipe_details">
+        <p class="public_recipe_food">Total food items: x</p>
+        <p class="public_recipe_price">Total price: y</p>
+      </div>
+    </div>
+  <% end %>
+</body>

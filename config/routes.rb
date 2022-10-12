@@ -1,14 +1,14 @@
-# frozen_string_literal: true
-
 Rails.application.routes.draw do
-  devise_for :users
   # Defines the root path route ("/")
-  root 'users#index'
+  root 'publicrecipes#index'
 
-  resources :users, only: %i[index show] do
-    resources :foods, only: %i[index show]
-    resources :recipes, only: %i[index show] do
-      resources :recipefoods, only: %i[create destroy]
-    end
+  devise_for :users
+
+  resources :users, only: %i[index]
+  resources :foods, only: %i[index]
+  resources :general_shopping_list, only: %i[index]
+  resources :recipes, only: %i[index show destroy] do
+    resources :recipe_foods, only: %i[index]
   end
+  resources :publicrecipes, only: %i[index]
 end
