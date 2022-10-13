@@ -6,6 +6,9 @@
     <%= link_to recipes_path, class:"nav_items" do %>
       <p>My Recipes</p>
     <% end %>
+    <%= link_to foods_path, class:"nav_items" do %>
+      <p> My food list </p>
+    <% end %>
   </div>
   <div class="nav_user">
     <p class="user_logged"><%= current_user.name %></p>

@@ -1,3 +1,23 @@
 <body>
-  <p>Recipe Name: <%= @recipe.name %></p>
+  <%= render "recipes/navmenu" %>
+  <div class="recipe_details_main">
+    <h2 class="recipe_title"><%= @recipe.name %></h2>
+    <div class="recipe_data">
+      <div class="recipe_times">
+        <p class="recipe_prep">Preparation Time: <%= @recipe.preparation_time %></p>
+        <p class="recipe_cook">Cooking Time: <%= @recipe.cooking_time %></p>
+      </div>
+      <div class="recipe_public">
+        <strong><%= @recipe.public? ? 'PUBLIC' : 'PRIVATE'%></strong>
+      </div>
+    </div>
+    <div class="recipe_description">
+        <p>Description: <%= @recipe.description %></p>
+    </div>
+    <div class="recipe_options">
+      <button>Generate shopping list</button>
+      <%= button_to "Add ingredient", new_recipe_recipefood_path(@recipe), method: :get %>
+    </div>
+   
+  </div>
 </body>

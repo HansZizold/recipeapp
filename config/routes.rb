@@ -5,10 +5,10 @@ Rails.application.routes.draw do
   devise_for :users
 
   resources :users, only: %i[index]
-  resources :foods, only: %i[index]
+  resources :foods, only: %i[index new create destroy]
   resources :general_shopping_list, only: %i[index]
-  resources :recipes, only: %i[index show destroy] do
-    resources :recipe_foods, only: %i[index]
+  resources :recipes, only: %i[index new create show destroy] do
+    resources :recipefoods, only: %i[index new create]
   end
   resources :publicrecipes, only: %i[index]
 end
