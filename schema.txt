@@ -24,7 +24,7 @@ user3 = User.create(name: 'Lilly', email: 'lilly@hotmail.com', password: '123456
 user4 = User.create(name: 'Jesse', email: 'jesse@hotmail.com', password: '123456')
 
 --Recipes
-recipe1 = Recipe.create(user: user1, name: 'Pumpkin soup', preparation_time: '10m', cooking_time: '40m', description: "Australia's most popular pumpkin soup")
+recipe1 = Recipe.create(user: user3, name: 'Pumpkin soup', preparation_time: '10m', cooking_time: '40m', description: "Australia's most popular pumpkin soup")
 recipe2 = Recipe.create(user: user1, name: 'Easy fried rice', preparation_time: '10m', cooking_time: '30m', description: "Fried rice is a staple of Aussie takeaway and while we all have our favourite restaurant that makes it just the way we like it, it's a dish that is easy to replicate at home. In this super simple version we use pantry and fridge staples, but the beauty of a basic fried rice recipe is that you can always adjust the ingredients based on what you happen to have on hand at any given time. This version keeps it simple which means that kids love it, making it a family-friendly dinner option.")
 recipe3 = Recipe.create(user: user3, name: "Classic shepherd's pie", preparation_time: '10m', cooking_time: '65m', description: "You can't go past a classic shepherd's pie for a satisfying Sunday lunch.")
 recipe4 = Recipe.create(user: user4, name: "Impossible quiche", preparation_time: '10m', cooking_time: '40m', description: "A beautiful golden brown ham and cheese quiche that will delight the whole family.")

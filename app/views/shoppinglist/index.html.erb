@@ -1,0 +1,28 @@
+<%= render "recipes/navmenu" %>
+<div class="shop_main">
+  <h2>Shopping List</h2>
+  <div class="shop_totals">
+    <strong class="shop_item">Amount of food items to buy: x</strong>
+    <strong class="shop_value">Total value of food needed: y</strong>
+  </div>
+
+  <table>
+    <tr>
+        <th>Food</th>
+        <th>Measurement Unit</th>
+        <th>Unit Price</th>
+        <th>Quantity</th>
+    </tr>
+    <% @foods.each do |food| %>
+      <tbody>
+        <tr id= <%= food.id %> >
+          <td><%=food.name %></td>
+          <td><%=food.measurement_unit %></td>
+          <td><%="$#{food.price}" %></td>
+          <td><%=food.quantity %></td>
+        </tr>
+      </tbody>
+    <% end %>
+  </table>
+
+</div>

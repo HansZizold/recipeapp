@@ -15,15 +15,19 @@
         <p>Description: <%= @recipe.description %></p>
     </div>
     <div class="recipe_options">
-      <button>Generate shopping list</button>
-      <%= button_to "Add ingredient", new_recipe_recipefood_path(@recipe), method: :get %>
+      <% if can? :read, @recipe %>
+        <%= button_to "Generate Shopping List", shoppinglist_index_path, method: :get %>
+        <%= button_to "Add ingredient", new_recipe_recipefood_path(@recipe), method: :get %>
+      <% end %>
     </div>
     <table>
       <tr>
           <th>Ingredient</th>
           <th>Quantity</th>
           <th>Value</th>
-          <th>Actions</th>
+          <% if can? :read, @recipe %>
+            <th>Actions</th>
+          <% end %>
       </tr>
       <% @recipefoods.each do |recipefood| %>
         <tbody>
@@ -31,10 +35,12 @@
             <td><%=recipefood.food.name %></td>
             <td><%=recipefood.quantity %></td>
             <td><%="$#{recipefood.quantity*recipefood.food.price}" %></td>
-            <td class="recipefood_data">
-              <%= button_to "Remove", recipe_recipefood_path(recipefood), method: :delete %>
-              <%= button_to "Modify", edit_recipe_recipefood_path(recipefood), method: :get %>
-            </td>
+            <% if can? :read, @recipe %>
+              <td class="recipefood_data">
+                <%= button_to "Remove", recipe_recipefood_path(recipefood), method: :delete %>
+                <%= button_to "Modify", edit_recipe_recipefood_path(recipefood), method: :get %>
+              </td>
+            <% end %>
           </tr>
         </tbody>
     <% end %>
