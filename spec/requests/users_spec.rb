@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe 'Users', type: :request do
   describe 'GET /users' do
     before(:each) do
-      @fake_user = User.create(name: 'Mr.Test', photo: 'testing.png', bio: 'Testing.')
+      @fake_user = User.create(name: 'Jesse', email: 'jesse@hotmail.com', password: '123456')
 
       get '/users'
     end
