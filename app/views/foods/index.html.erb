@@ -13,4 +13,34 @@
       </div>
     <% end %>
   <% end %>
+  <%= render "recipes/navmenu" %>
+  <div class="foods_main">
+    <div class="add_food">
+      <%= link_to "Add Food", new_food_path, method: :get, class:"add_link" %>
+    </div>
+    <table>
+      <tr>
+          <th>Food</th>
+          <th>Measurement Unit</th>
+          <th>Unit Price</th>
+          <th>Quantity</th>
+          <th>Actions</th>
+      </tr>
+      <% @foods.each do |food| %>
+        <tbody>
+          <% if can? :read, food %>
+            <tr id= <%= food.id %> >
+              <td><%=food.name %></td>
+              <td><%=food.measurement_unit %></td>
+              <td><%="$#{food.price}" %></td>
+              <td><%=food.quantity %></td>
+              <td>
+                <%= button_to "Remove", food_path(food), method: :delete %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      <% end %>
+    </table>
+  </div>
 </body>

@@ -1,0 +1,20 @@
+<div class="food_main">
+  <h2>Edit ingredient</h2>
+  <%= form_with model: @recipefood, url: recipe_recipefood_path, method: :put do |form| %>
+    <div class="food_input">
+      <%= form.label :'Ingredient: ', class: "food_field" %>
+      <select name="recipefood[food_id]">
+        <% current_user.foods.each do |food| %>
+          <option value=<%= food.id %>><%= food.name %></option>
+        <% end %>
+      </select>
+    </div>
+    <div class="food_input">
+      <%= form.label :'Quantity: ', class: "food_field" %>
+      <%= form.text_field :quantity %>
+    </div>
+    <div class="food_submit">
+      <%= form.submit :'Save Ingredient' %>
+    </div>
+  <% end %>
+</div>
