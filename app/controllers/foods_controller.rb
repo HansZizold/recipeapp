@@ -25,7 +25,7 @@ class FoodsController < ApplicationController
     food.destroy
 
     if food.destroy
-      flash[:success] = 'Ingredient deleted successfully'
+      flash[:success] = 'Food deleted successfully'
       redirect_to foods_path
     else
       flash.now[:error] = 'Error: Recipe could not be deleted'
