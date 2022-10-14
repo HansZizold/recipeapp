@@ -1,4 +1,18 @@
 <body>
+  <%= render "navmenu" %>
+  <% @foodlists .each do |food| %>
+    <% if can? :read_recipe, food %>
+      <div class="recipe_main">
+        <div class="recipe">
+          <%= link_to foodLists _path(food.id), class: "food_name" do %>
+            <p><%= food.name %></p>
+          <% end %>
+          <%= button_to "Remove recipe", foodLists _path(food), method: :delete %>
+        </div>
+        <p class="recipe_desc"><%= food.description %></p>
+      </div>
+    <% end %>
+  <% end %>
   <%= render "recipes/navmenu" %>
   <div class="foods_main">
     <div class="add_food">

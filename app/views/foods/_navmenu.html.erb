@@ -1,0 +1,14 @@
+<div class="nav_menu">
+  <div class="nav_navigation">
+    <%= link_to publicrecipes_path, class:"nav_items" do %>
+      <p>Public Recipes</p>
+    <% end %>
+    <%= link_to foodLists_path, class:"nav_items" do %>
+      <p> My FoodList </p>
+    <% end %>
+  </div>
+  <div class="nav_user">
+    <p class="user_logged"><%= current_user.name %></p>
+    <%= button_to "Sign out", destroy_user_session_path, method: :delete %>
+  </div>
+</div>
