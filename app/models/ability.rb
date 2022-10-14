@@ -2,6 +2,6 @@ class Ability
   include CanCan::Ability
 
   def initialize(user)
-    can :read_recipe, Recipe, user:
+    can :read, :all, user:
   end
 end

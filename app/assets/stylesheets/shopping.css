@@ -1,0 +1,20 @@
+.shop_main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.shop_totals {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0 0 32px;
+}
+
+.shop_item {
+  margin: 0 160px 0 0;
+}
+
+.shop_value {
+  margin: 0 0 0 160px;
+}
