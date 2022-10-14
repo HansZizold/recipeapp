@@ -1,7 +1,7 @@
 <body>
   <%= render "navmenu" %>
   <% @recipes.each do |recipe| %>
-    <% if can? :read_recipe, recipe %>
+    <% if can? :read, recipe %>
       <div class="recipe_main">
         <div class="recipe">
           <%= link_to recipe_path(recipe.id), class: "recipe_name" do %>
