@@ -45,4 +45,3 @@ class FoodsController < ApplicationController
       flash.now[:error] = 'Error: Recipe could not be deleted'
     end
   end
-
