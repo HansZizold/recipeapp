@@ -8,7 +8,7 @@ RSpec.describe Recipe, type: :model do
         preparation_time: 45,
         cooking_time: 30,
         photo: 'paella.jpg',
-        public: true,
+        public: true
       )
     end
 
