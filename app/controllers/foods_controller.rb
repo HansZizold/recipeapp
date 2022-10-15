@@ -1,4 +1,3 @@
-# Class FoodsController
 class FoodsController < ApplicationController
   def index
     @foods = Food.all
