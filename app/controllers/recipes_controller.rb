@@ -1,7 +1,11 @@
-# Class RecipesController
 class RecipesController < ApplicationController
   def index
-    @recipes = Recipe.all
+    @recipes = Recipe.all.includes([:user])
+  end
+
+  def show
+    @recipe = Recipe.find(params[:id])
+    @recipefoods = Recipefood.where(recipe_id: params[:id])
   end
 
   def new
@@ -9,7 +13,8 @@ class RecipesController < ApplicationController
   end
 
   def create
-    @recipe = Recipe.new(params.require(:recipe).permit(:name, :preparation_time, :cooking_time, :description, :public))
+    @recipe = Recipe.new(params.require(:recipe).permit(:name, :preparation_time, :cooking_time, :description))
+
     @recipe.user = current_user
 
     if @recipe.save
@@ -18,11 +23,6 @@ class RecipesController < ApplicationController
     else
       flash.now[:error] = 'Error: Recipe could not be saved'
     end
-  end
-
-  def show
-    @recipe = Recipe.find(params[:id])
-    @recipefoods = Recipefood.where(recipe_id: params[:id])
   end
 
   def destroy
