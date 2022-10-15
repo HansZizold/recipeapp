@@ -46,4 +46,3 @@ class FoodsController < ApplicationController
       end
     end
   end
-end
