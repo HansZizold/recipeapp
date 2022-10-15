@@ -1,5 +1,10 @@
 <body>
   <%= render "navmenu" %>
+  <div class="add_recipe">
+    <% if can? :manage, Recipe %>
+      <%= button_to "Add Recipe", new_recipe_path, method: :get %>
+    <% end %>
+  </div>
   <% @recipes.each do |recipe| %>
     <% if can? :read, recipe %>
       <div class="recipe_main">

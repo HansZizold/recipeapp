@@ -4,6 +4,22 @@ class RecipesController < ApplicationController
     @recipes = Recipe.all
   end
 
+  def new
+    @recipe = Recipe.new
+  end
+
+  def create
+    @recipe = Recipe.new(params.require(:recipe).permit(:name, :preparation_time, :cooking_time, :description, :public))
+    @recipe.user = current_user
+
+    if @recipe.save
+      flash[:success] = 'Recipe saved successfully'
+      redirect_to recipes_path
+    else
+      flash.now[:error] = 'Error: Recipe could not be saved'
+    end
+  end
+
   def show
     @recipe = Recipe.find(params[:id])
     @recipefoods = Recipefood.where(recipe_id: params[:id])
