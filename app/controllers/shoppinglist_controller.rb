@@ -20,7 +20,7 @@ class ShoppinglistController < ApplicationController
         @prices[food.name] = food.price
         if @shoppinglist[food.name].negative?
           @total_quantity += @shoppinglist[food.name]
-          @total_value += @shoppinglist[food.name]*food.price
+          @total_value += @shoppinglist[food.name] * food.price
         end
       end
     end
