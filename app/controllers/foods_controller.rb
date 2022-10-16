@@ -36,6 +36,7 @@ class FoodsController < ApplicationController
     end
   end
 
+# rubocop:disable Metrics/MethodLength
   def destroy
     food = Food.find(params[:id])
     food.destroy
@@ -48,4 +49,3 @@ class FoodsController < ApplicationController
     end
   end
 end
-# rubocop:enable Metrics/AbcSize, Metrics/MethodLength
