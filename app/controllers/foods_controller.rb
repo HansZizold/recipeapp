@@ -1,3 +1,4 @@
+# rubocop:disable Metrics/AbcSize, Metrics/MethodLength
 # Class FoodsController
 class FoodsController < ApplicationController
   def index
@@ -47,3 +48,4 @@ class FoodsController < ApplicationController
     end
   end
 end
+# rubocop:enable Metrics/AbcSize, Metrics/MethodLength
