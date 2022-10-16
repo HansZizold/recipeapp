@@ -1,0 +1,28 @@
+<%= render "recipes/navmenu" %>
+<div class="shop_main">
+  <h2>Shopping List</h2>
+  <div class="shop_totals">
+    <strong class="shop_item">Amount of food items to buy: <%= @total_quantity.abs %></strong>
+    <strong class="shop_value">Total value of food needed: <%= @total_value.abs %></strong>
+  </div>
+  <table>
+    <tr>
+        <th>Food</th>
+        <th>Quantity</th>
+        <th>Unit Price</th>
+        <th>Total Price</th>
+    </tr>
+    <% @shoppinglist.each_with_index do |shop, i| %>
+      <tbody>
+        <% if shop[1] < 0 %>
+          <tr>
+            <td><%=shop[0] %></td>
+            <td><%=shop[1].abs %></td>
+            <td><%=@prices[shop[0]] %></td>
+            <td><%=@prices[shop[0]]*shop[1].abs %></td>
+          </tr>
+      <% end %>
+      </tbody>
+    <% end %>
+  </table>
+</div>

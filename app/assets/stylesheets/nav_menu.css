@@ -1,0 +1,30 @@
+.nav_menu {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0 200px;
+}
+
+.nav_navigation {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.nav_items {
+  margin: 0 12px;
+  text-decoration: none;
+  font-weight: bold;
+  color: darkblue;
+}
+
+.nav_user {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.user_logged {
+  margin-right: 12px;
+}

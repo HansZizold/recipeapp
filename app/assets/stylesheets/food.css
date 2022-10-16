@@ -1,0 +1,39 @@
+.foods_main {
+  display: flex;
+  flex-direction: column;
+  margin: 16px 200px;
+}
+
+.add_food {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  margin: 0 68px 16px 0;
+}
+
+.add_link {
+  text-decoration: none;
+  color: darkblue;
+  font-weight: bold;
+}
+
+table {
+  border-collapse: collapse;
+  vertical-align: middle;
+  align-self: center;
+  width: 64vw;
+}
+
+th,
+td {
+  border: 1px solid black;
+  padding: 4px 8px;
+}
+
+th {
+  width: 20%;
+  background-color: darkblue;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 2%;
+}
