@@ -1,6 +1,6 @@
-# rubocop:disable Metrics/AbcSize, Metrics/MethodLength
 # Class FoodsController
 class FoodsController < ApplicationController
+
   def index
     @foodlists = Food.all
   end
@@ -11,7 +11,6 @@ class FoodsController < ApplicationController
 
   def destroy
     foodlist = Food.find(params[:id])
-
     if foodlist.destroy
       flash[:success] = 'foodList deleted successfully'
       redirect_to foodlists_path
@@ -19,6 +18,7 @@ class FoodsController < ApplicationController
       flash.now[:error] = 'Error: foodList could not be deleted'
     @foods = Food.all
   end
+end
 
   def new
     @food = Food.new
@@ -36,16 +36,15 @@ class FoodsController < ApplicationController
     end
   end
 
-# rubocop:disable Metrics/MethodLength
-  def destroy
-    food = Food.find(params[:id])
-    food.destroy
 
-    if food.destroy
-      flash[:success] = 'Food deleted successfully'
-      redirect_to foods_path
-    else
-      flash.now[:error] = 'Error: Recipe could not be deleted'
-    end # rubocop:disable Style/SymbolArray
-  end# rubocop:disable Style/SymbolArray
-end # rubocop:disable Style/SymbolArray
+
+
+
+
+
+
+
+
+
+
+
