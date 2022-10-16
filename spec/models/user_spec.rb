@@ -7,7 +7,7 @@ RSpec.describe User, type: :model do
         id: 1,
         name: 'Tester',
         email: 'test@gmail.com',
-        role: 'user'
+        role: 1
       )
     end
 

@@ -5,10 +5,8 @@ RSpec.describe Food, type: :model do
     before do
       @food = Food.create(
         name: 'Tomatoes',
-        measure_unit: 'Ut.',
-        price: 0.87,
-        quantity: 7,
-        user_id: 1
+        measurement_unit: 'pc.',
+        price: 0.87
       )
     end
 
