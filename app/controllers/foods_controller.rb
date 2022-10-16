@@ -46,6 +46,6 @@ class FoodsController < ApplicationController
       redirect_to foods_path
     else
       flash.now[:error] = 'Error: Recipe could not be deleted'
-    end
-  end
-end
+    end # rubocop:disable Style/SymbolArray
+  end# rubocop:disable Style/SymbolArray
+end # rubocop:disable Style/SymbolArray
